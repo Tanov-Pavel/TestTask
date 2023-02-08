@@ -38,32 +38,29 @@ namespace TestTask.Controllers
             return objec;
         }
 
-        [HttpPut("updete")]
-        public OkResult Update(Guid id, [FromBody] CreateMetrixDto request)
+        [HttpPut("update")]
+        public OkResult Update(Guid id, [FromBody] CreateMetricsDto request)
         {
             var metric = new Metric
             {
-                IpAddress = request.IpAddress,
-                DiskSpace = request.DiskSpace,
-                Cpu = request.Cpu,
-                RamSpaceFree = request.RamSpaceFree,
-                RamSpaceTotal = request.RamSpaceTotal
+                IpAddress = request.IpAddress.ToString(),
+                Cpu = request.CPU.Usage,
+                TotalMemory = request.Memory.TotalMemory,
+                FreeMemory = request.Memory.FreeMemory,
             };
             _metricRepository.Update(metric, id);
             return Ok();
         }
 
         [HttpPost("create")]
-        public OkResult Post([FromBody] CreateMetrixDto request)
+        public OkResult Post([FromBody] CreateMetricsDto request)
         {
             var metric = new Metric
             {
-                IpAddress = request.IpAddress,
-                DiskSpace = request.DiskSpace,
-                Cpu = request.Cpu,
-                RamSpaceFree = request.RamSpaceFree,
-                RamSpaceTotal = request.RamSpaceTotal
-
+                IpAddress = request.IpAddress.ToString(),
+                Cpu = request.CPU.Usage,
+                TotalMemory = request.Memory.TotalMemory,
+                FreeMemory = request.Memory.FreeMemory,
             };
             _metricRepository.Create(metric);
             return Ok();
@@ -72,11 +69,11 @@ namespace TestTask.Controllers
         [HttpDelete("delete")]
         public OkResult Delete(Guid id)
         {
-            var objec = _metricRepository.GetAll()
+            var obj = _metricRepository.GetAll()
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
 
-            _metricRepository.Delete(objec);
+            _metricRepository.Delete(obj);
 
             return Ok();
         }

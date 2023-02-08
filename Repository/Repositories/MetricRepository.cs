@@ -1,4 +1,4 @@
-﻿namespace Repository.Repositories;
+﻿    namespace Repository.Repositories;
 
 using Domain;
 using Repository.Repositories.Interfaces;
@@ -23,10 +23,9 @@ public class MetricRepository : AbstractRepository<Metric>, IMetricRepository
         {
             Id = reader.GetGuid(0),
             IpAddress = reader.GetString(1),
-            DiskSpace = reader.GetInt32(2),
             Cpu = reader.GetDouble(3),
-            RamSpaceFree = reader.GetInt32(4),
-            RamSpaceTotal = reader.GetInt32(5),
+            FreeMemory = reader.GetInt32(4),
+            TotalMemory = reader.GetInt32(5),
             IsDeleted = reader.GetBoolean(6),
             CreateDate = reader.GetDateTime(7),
             UpdateDate = !reader.IsDBNull(8) ? reader.GetDateTime(8) : null,

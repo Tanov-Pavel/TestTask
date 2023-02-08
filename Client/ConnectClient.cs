@@ -1,5 +1,5 @@
-﻿using Client;
-using Client.Metrix;
+﻿using Client.Metrix;
+using Client.Service.Metrics;
 using DTO;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.VisualBasic;
@@ -12,9 +12,9 @@ using System.Management;
 using System.Runtime.InteropServices;
 using ObjectQuery = System.Management.ObjectQuery;
 
-WMetrix wMetrix = new WMetrix();
+WMetrics wMetrix = new WMetrics();
 
-LinuxMetrix linuxMetrix = new LinuxMetrix();
+LinuxMetrics linuxMetrix = new LinuxMetrics();
 
 int period = 10000;
 
@@ -47,7 +47,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 {
     while (true)
     {
-        wMetrix.GetMetrix();
+        wMetrix.GetMetrics();
         Console.WriteLine();
         Thread.Sleep(period);
         Console.Clear();
@@ -58,7 +58,7 @@ else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
 {
     while (true)
     {
-        linuxMetrix.GetMetrix();
+        linuxMetrix.GetMetrics();
         Console.WriteLine();
         Thread.Sleep(period);
         Console.Clear();
