@@ -9,6 +9,7 @@
       "TestTask/1.0.0": {
         "dependencies": {
           "AngularJs.SignalR.Hub": "1.6.3",
+          "DTO": "1.0.0",
           "Domain": "1.0.0",
           "EntityFramework": "6.4.4",
           "Grpc.Core": "2.46.6",
@@ -984,6 +985,11 @@
           "Domain.dll": {}
         }
       },
+      "DTO/1.0.0": {
+        "runtime": {
+          "DTO.dll": {}
+        }
+      },
       "Repository/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
@@ -1723,6 +1729,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

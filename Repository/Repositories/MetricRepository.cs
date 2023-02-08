@@ -17,11 +17,11 @@ public class MetricRepository : AbstractRepository<Metric>, IMetricRepository
     {
         throw new NotImplementedException();
     }
-
     protected override Metric Map(DbDataReader reader)
     {
         var result = new Metric
-        {   
+        {
+            Id = reader.GetGuid(0),
             IpAddress = reader.GetString(1),
             DiskSpace = reader.GetInt32(2),
             Cpu = reader.GetDouble(3),
@@ -30,10 +30,8 @@ public class MetricRepository : AbstractRepository<Metric>, IMetricRepository
             IsDeleted = reader.GetBoolean(6),
             CreateDate = reader.GetDateTime(7),
             UpdateDate = !reader.IsDBNull(8) ? reader.GetDateTime(8) : null,
-            DateDelete = !reader.IsDBNull(9) ? reader.GetDateTime(9) : null
+            DeleteDate = !reader.IsDBNull(9) ? reader.GetDateTime(9) : null
         };
-
         return result;
     }
-
 }

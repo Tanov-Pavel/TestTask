@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,10 @@ using System.Threading.Tasks;
 [Table(name: "metrix", Schema="public")]
 public class Metric : PersistentObject
 {
+    
     [Column("ip_address")]
-    public string IpAddress { get; set; }
-    [Column("disk_spase")]
+    public string? IpAddress { get; set; }
+    [Column("disk_space")]
     public int DiskSpace { get; set; }
     [Column("cpu")]
     public double Cpu { get; set; }

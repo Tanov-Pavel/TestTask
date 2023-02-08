@@ -6,18 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 public abstract class Entity<TId>
-{
-    [Column("id")]
+{ 
     public virtual TId Id { get; set; }
     [Column("is_deleted")]
     public virtual bool IsDeleted { get; set; }
     [Column("create_date")]
-    public virtual DateTime CreateDate { get; set; }
+    public virtual DateTime CreateDate { get; set; } = DateTime.Now;
     [Column("update_date")]
     public virtual DateTime? UpdateDate { get; set; }
     [Column("delete_date")]
-    public virtual DateTime? DateDelete { get; set; }
-
+    public virtual DateTime? DeleteDate { get; set; }   
     public override bool Equals(object obj)
     {
         return Equals(obj as Entity<TId>);
@@ -48,7 +46,6 @@ public abstract class Entity<TId>
         }
         return false;
     }
-
     public override int GetHashCode()
     {
         if (Equals(Id, default(TId)))

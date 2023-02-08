@@ -16,12 +16,6 @@ public interface IRepository<T> where T : PersistentObject
     Task<IQueryable<T>> GetAllAsync();
     void Create(T item);
     Task CreateAsync(T item);
-    Task AddRange(IEnumerable<T> newEntities);
     void Delete(T entity);
-    void Remove(T entity);
-    Task RemoveRange(IEnumerable<T> entities);
-    void Update(T entity);
-    Task UpdateRange(IEnumerable<T> entities);
-    Task<int> SaveChangesAsync();
-    int SaveChanges();
+    void Update(T entity, Guid Id);
 }

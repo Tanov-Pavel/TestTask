@@ -1691,6 +1691,16 @@
           "bin/placeholder/Domain.dll": {}
         }
       },
+      "DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
+      },
       "Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4483,6 +4493,11 @@
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
     },
+    "DTO/1.0.0": {
+      "type": "project",
+      "path": "../DTO/DTO.csproj",
+      "msbuildProject": "../DTO/DTO.csproj"
+    },
     "Repository/1.0.0": {
       "type": "project",
       "path": "../Repository/Repository.csproj",
@@ -4492,6 +4507,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "AngularJs.SignalR.Hub >= 1.6.3",
+      "DTO >= 1.0.0",
       "Domain >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "Grpc.Core >= 2.46.6",
@@ -4538,6 +4554,9 @@
           "projectReferences": {
             "C:\\Users\\Pavel\\Desktop\\TestTask\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\Pavel\\Desktop\\TestTask\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\Pavel\\Desktop\\TestTask\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\Pavel\\Desktop\\TestTask\\DTO\\DTO.csproj"
             },
             "C:\\Users\\Pavel\\Desktop\\TestTask\\Repository\\Repository.csproj": {
               "projectPath": "C:\\Users\\Pavel\\Desktop\\TestTask\\Repository\\Repository.csproj"
