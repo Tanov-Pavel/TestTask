@@ -13,9 +13,9 @@ namespace Domain
         [Column("name")]
         public string Name { get; set; }
         [Column("total_disk_space")]
-        public string TotalDiskSpace { get; set; }
+        public long TotalDiskSpace { get; set; }
         [Column("free_disk_space")]
-        public string FreeDiskSpace { get; set; }
+        public long FreeDiskSpace { get; set; }
         [Column("metric_id")]
         public long MetricId { get; set; }
         [Column("metric")]

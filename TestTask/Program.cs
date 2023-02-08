@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();      // подключема сервисы SignalR
 
 builder.Services.AddScoped<IMetricRepository, MetricRepository>();
+builder.Services.AddScoped<IDiskSpaceRepository, DiskSpaceRepository>();
 
 var app = builder.Build();
 
