@@ -24,6 +24,10 @@ namespace Client.Service.Metrics
         public static PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         public static PerformanceCounter ramCounterAvailable = new PerformanceCounter("Memory", "Available MBytes");
 
+        public WMetrics()
+        {
+
+        }
         public WMetrics(IDiskSpace diskSpace)
         {
             DiskSpace = diskSpace;

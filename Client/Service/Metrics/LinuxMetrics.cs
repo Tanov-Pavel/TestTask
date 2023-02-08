@@ -17,6 +17,10 @@ namespace Client.Service.Metrics
     {
         private readonly IDiskSpace DiskSpace;
 
+        public LinuxMetrics()
+        {
+
+        }
         public LinuxMetrics(IDiskSpace diskSpace)
         {
             DiskSpace = diskSpace;
