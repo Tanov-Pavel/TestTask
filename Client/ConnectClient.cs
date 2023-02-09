@@ -1,4 +1,6 @@
-﻿using Client.Metrix;
+﻿using Client.Interfaces;
+using Client.Metrix;
+using Client.Service;
 using Client.Service.Metrics;
 using DTO;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -7,14 +9,16 @@ using System;
 using System.Data.Entity.Core.Objects;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Management;
 using System.Runtime.InteropServices;
 using ObjectQuery = System.Management.ObjectQuery;
 
-WMetrics wMetrix = new WMetrics();
 
-LinuxMetrics linuxMetrix = new LinuxMetrics();
+WMetrics wMetrix = new WMetrics(new DiskSpaceService());
+
+LinuxMetrics linuxMetrix = new LinuxMetrics(new DiskSpaceService());
 
 int period = 10000;
 

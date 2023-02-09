@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Client.Interfaces
 {
-    public interface IDiskSpace
+    public interface IDiskSpaceService
     {
         List<DiskSpaceDto> CollectWindows();
         List<DiskSpaceDto> CollectLinux();

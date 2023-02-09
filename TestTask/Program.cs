@@ -1,3 +1,5 @@
+using Client.Interfaces;
+using Client.Service;
 using Domain;
 using Repository;
 using Repository.Repositories;
@@ -15,6 +17,8 @@ builder.Services.AddSignalR();      // подключема сервисы SignalR
 
 builder.Services.AddScoped<IMetricRepository, MetricRepository>();
 builder.Services.AddScoped<IDiskSpaceRepository, DiskSpaceRepository>();
+
+builder.Services.AddScoped<IDiskSpaceService, DiskSpaceService>();
 
 var app = builder.Build();
 

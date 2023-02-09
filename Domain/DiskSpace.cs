@@ -17,7 +17,7 @@ namespace Domain
         [Column("free_disk_space")]
         public long FreeDiskSpace { get; set; }
         [Column("metric_id")]
-        public long MetricId { get; set; }
+        public Guid MetricId { get; set; }
         [Column("metric")]
         public Metric Metric { get; set; }
     }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Client.Service
 {
-    public class DiskSpace : IDiskSpace
+    public class DiskSpaceService : IDiskSpaceService
     {
         public List<DiskSpaceDto> CollectLinux()
         {

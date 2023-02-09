@@ -17,20 +17,16 @@ using Client.Interfaces;
 
 namespace Client.Service.Metrics
 {
-    public class WMetrics : ImetricsRepository
+    public class WMetrics : IMetricsService
     {
-        private readonly IDiskSpace DiskSpace;
+        private readonly IDiskSpaceService DiskSpaceService;
 
         public static PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         public static PerformanceCounter ramCounterAvailable = new PerformanceCounter("Memory", "Available MBytes");
 
-        public WMetrics()
+        public WMetrics(IDiskSpaceService diskSpaceService)
         {
-
-        }
-        public WMetrics(IDiskSpace diskSpace)
-        {
-            DiskSpace = diskSpace;
+            DiskSpaceService = diskSpaceService;
         }
 
         public CreateMetricsDto GetMetrics()
@@ -82,8 +78,7 @@ namespace Client.Service.Metrics
 
         private List<DiskSpaceDto> GetDiskSpaceWindows()
         {
-            
-            return DiskSpace.CollectWindows();
+            return DiskSpaceService.CollectWindows();
         }
     }
 }

@@ -13,15 +13,11 @@ using Client.Interfaces;
 
 namespace Client.Service.Metrics
 {
-    public class LinuxMetrics : ImetricsRepository
+    public class LinuxMetrics : IMetricsService
     {
-        private readonly IDiskSpace DiskSpace;
+        private readonly IDiskSpaceService DiskSpace;
 
-        public LinuxMetrics()
-        {
-
-        }
-        public LinuxMetrics(IDiskSpace diskSpace)
+        public LinuxMetrics(IDiskSpaceService diskSpace)
         {
             DiskSpace = diskSpace;
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Client.Metrix
 {
-    public interface ImetricsRepository
+    public interface IMetricsService
     {
         CreateMetricsDto GetMetrics();
     }
